@@ -44,6 +44,13 @@ body {
   color: var(--muted);
 }
 
+.page-header code {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
 .chart-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
@@ -51,6 +58,7 @@ body {
 }
 
 .chart-card {
+  position: relative;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -70,5 +78,33 @@ body {
 
 .chart-wrapper {
   position: relative;
-  height: 320px;
+  width: 100%;
+}
+
+.chart-wrapper svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+}
+
+.chart-wrapper figure {
+  margin: 0;
+}
+
+.chart-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  white-space: nowrap;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 10px 24px -10px rgba(0, 0, 0, 0.6);
 }
